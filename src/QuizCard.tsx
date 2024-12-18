@@ -16,7 +16,7 @@ const buttonStyles = [
 function QuizCard({ question }: { question: Question }) {
   const { prompt, options } = question;
   return (
-    <div className="bg-green-100 rounded-lg border-2 border-black p-2">
+    <div className="bg-slate-200 rounded-lg border-2 border-black p-2">
       <div className="text-center p-2 font-semibold border-b-2 border-black mb-2">
         <span>{prompt}</span>
       </div>
@@ -27,11 +27,13 @@ function QuizCard({ question }: { question: Question }) {
             className={` rounded-lg flex items-center w-full text-left border-black border`}
           >
             <span
-              className={`${buttonStyles[index].bg} font-bold w-8 text-center h-full`}
+              className={`${buttonStyles[index].bg} font-bold w-8 text-center h-fit py-2 border-e border-black rounded-s-lg`}
             >
               {buttonStyles[index].letter}:
             </span>
-            <span className="p-2">{option}</span>
+            <span className="p-2 bg-slate-100 w-full rounded-e-lg ">
+              {option}
+            </span>
           </button>
         ))}
       </div>
