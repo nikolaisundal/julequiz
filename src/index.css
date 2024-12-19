@@ -78,7 +78,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgb(236, 233, 233), #e8ecec);
+  background: linear-gradient(rgb(255, 255, 255), #ffffff);
   opacity: 0;
   animation: main-loadup 1s forwards linear, main-loadup-bg 10s forwards linear;
   animation-delay: 7s, 8s;

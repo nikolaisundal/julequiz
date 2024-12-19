@@ -5,18 +5,38 @@ type Question = {
   answerIndex: number;
   playerChoiceIndex: number | undefined;
 };
+type QuizCardProps = {
+  question: Question;
+  onSelect: (index: number, id: string) => void;
+};
 
 const buttonStyles = [
-  { letter: "A", bg: "bg-red-200 hover:bg-red-300" },
-  { letter: "B", bg: "bg-green-200 hover:bg-green-300" },
-  { letter: "C", bg: "bg-yellow-200 hover:bg-yellow-300" },
-  { letter: "D", bg: "bg-purple-200 hover:bg-purple-300" },
+  {
+    letter: "A",
+    bg: "bg-red-200",
+    selectedBg: "bg-red-400",
+  },
+  {
+    letter: "B",
+    bg: "bg-green-200",
+    selectedBg: "bg-green-400",
+  },
+  {
+    letter: "C",
+    bg: "bg-yellow-200",
+    selectedBg: "bg-yellow-400",
+  },
+  {
+    letter: "D",
+    bg: "bg-purple-200",
+    selectedBg: "bg-purple-400",
+  },
 ];
 
-function QuizCard({ question }: { question: Question }) {
-  const { prompt, options } = question;
+function QuizCard({ question, onSelect }: QuizCardProps) {
+  const { prompt, options, playerChoiceIndex, id } = question;
   return (
-    <div className="bg-slate-200 rounded-lg border-2 border-black p-2">
+    <div className="bg-green-100 rounded-lg border-2 border-black p-2">
       <div className="text-center p-2 font-semibold border-b-2 border-black mb-2">
         <span>{prompt}</span>
       </div>
@@ -24,16 +44,30 @@ function QuizCard({ question }: { question: Question }) {
         {options.map((option, index) => (
           <button
             key={index}
-            className={` rounded-lg flex items-center w-full text-left border-black border`}
+            onClick={() => onSelect(index, id)}
+            className={`rounded-lg flex items-center w-full text-left border-black border 
+  hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-75 ${
+    playerChoiceIndex === index ? "ring-2 ring-black" : ""
+  }`}
           >
-            <span
-              className={`${buttonStyles[index].bg} font-bold w-8 text-center h-fit py-2 border-e border-black rounded-s-lg`}
-            >
-              {buttonStyles[index].letter}:
-            </span>
-            <span className="p-2 bg-slate-100 w-full rounded-e-lg ">
-              {option}
-            </span>
+            <div className="flex items-center w-full text-left ">
+              <span
+                className={`${
+                  playerChoiceIndex === index
+                    ? buttonStyles[index].selectedBg
+                    : buttonStyles[index].bg
+                } font-bold w-8 text-center py-2 border-e border-black rounded-s-lg`}
+              >
+                {buttonStyles[index].letter}:
+              </span>
+              <span
+                className={`p-2 w-full rounded-e-lg ${
+                  playerChoiceIndex === index ? "bg-slate-300" : "bg-white"
+                }`}
+              >
+                {option}
+              </span>
+            </div>
           </button>
         ))}
       </div>
