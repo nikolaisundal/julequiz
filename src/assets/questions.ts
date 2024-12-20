@@ -64,7 +64,7 @@ export const questions: Question[] = [
     prompt:
       "Hvis man ser bort fra kostnader for personell, infrastruktur, investeringer og oppgraderinger. Hva er ca. timesprisen for å holde en F-35 i lufta?",
     options: ["110 000 kr", "250 000 kr", "360 000 kr", "420 000 kr"],
-    answerIndex: 1,
+    answerIndex: 2,
     playerChoiceIndex: undefined,
   },
   {
@@ -96,6 +96,7 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
+
     prompt:
       "På slutten av 900-tallet, muligens i år 986, bekjempet bla. ladejarlene en dansk invasjonsflåte. Hva heter slaget?",
     options: [
@@ -104,7 +105,7 @@ export const questions: Question[] = [
       "Slaget ved Stiklestad",
       "Slaget ved Hjørungavåg",
     ],
-    answerIndex: 2,
+    answerIndex: 3,
     playerChoiceIndex: undefined,
   },
   {
