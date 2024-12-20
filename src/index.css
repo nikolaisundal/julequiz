@@ -13,7 +13,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
   background: radial-gradient(
     circle,
     rgb(126, 223, 255) 0%,
@@ -72,7 +72,7 @@
 } */
 
 .main {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;

@@ -8,6 +8,7 @@ type Question = {
 type QuizCardProps = {
   question: Question;
   onSelect: (index: number, id: string) => void;
+  isQuizChecked: boolean;
 };
 
 const buttonStyles = [
@@ -33,7 +34,7 @@ const buttonStyles = [
   },
 ];
 
-function QuizCard({ question, onSelect }: QuizCardProps) {
+function QuizCard({ question, isQuizChecked, onSelect }: QuizCardProps) {
   const { prompt, options, playerChoiceIndex, id } = question;
   return (
     <div className="bg-green-100 rounded-lg border-2 border-black p-2">
@@ -44,11 +45,13 @@ function QuizCard({ question, onSelect }: QuizCardProps) {
         {options.map((option, index) => (
           <button
             key={index}
-            onClick={() => onSelect(index, id)}
+            onClick={() => (!isQuizChecked ? onSelect(index, id) : undefined)}
             className={`rounded-lg flex items-center w-full text-left border-black border 
-  hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-75 ${
-    playerChoiceIndex === index ? "ring-2 ring-black" : ""
-  }`}
+  ${
+    !isQuizChecked
+      ? "hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50"
+      : ""
+  } ${playerChoiceIndex === index ? "ring-2 ring-black" : ""}`}
           >
             <div className="flex items-center w-full text-left ">
               <span
@@ -62,8 +65,15 @@ function QuizCard({ question, onSelect }: QuizCardProps) {
               </span>
               <span
                 className={`p-2 w-full rounded-e-lg ${
-                  playerChoiceIndex === index ? "bg-slate-300" : "bg-white"
-                }`}
+                  !isQuizChecked
+                    ? "text-black"
+                    : // When checked, show green for correct answer, red for wrong choice
+                    question.answerIndex === index
+                    ? "text-green-600"
+                    : playerChoiceIndex === index
+                    ? "text-red-600"
+                    : "text-black"
+                } ${playerChoiceIndex === index ? "bg-slate-200" : "bg-white"}`}
               >
                 {option}
               </span>

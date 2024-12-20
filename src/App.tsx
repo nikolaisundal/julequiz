@@ -12,6 +12,8 @@ type Question = {
 
 function App() {
   const [questionList, setQuestionList] = useState<Question[]>(questions);
+  const [isQuizChecked, setIsQuizChecked] = useState(false);
+  const [points, setPoints] = useState<number>(0);
 
   const optionSelect = (index: number, id: string) => {
     setQuestionList((questions) =>
@@ -23,6 +25,24 @@ function App() {
     );
   };
 
+  const checkAnswers = () => {
+    const allQuestionsAnswered = questionList.every(
+      (question) => question.playerChoiceIndex !== undefined
+    );
+
+    if (!allQuestionsAnswered) {
+      alert("Please answer all questions before checking!");
+      return;
+    }
+    setIsQuizChecked(true);
+    const score = questionList.reduce((count, question) => {
+      return question.playerChoiceIndex === question.answerIndex
+        ? count + 1
+        : count;
+    }, 0);
+    setPoints(score);
+  };
+  console.log();
   return (
     <>
       <div className="loader">
@@ -83,19 +103,108 @@ function App() {
           <div className="snow">&#10052;</div>
         </div>
         <div className="w-full h-screen fixed flex justify-center overflow-y-auto">
-          <div className="w-full max-w-sm relative z-50 pt-20">
-            <h1 className="text-center text-slate-100 mb-20 bg-red-300 text-4xl border-2 border-black p-4 rounded-lg">
-              Velkommen til Nikolais julequiz
-            </h1>
+          <div className="w-full max-w-sm relative  pt-20">
+            <div className="text-center text-slate-100 mb-20 bg-red-300 text-4xl border-2 border-black p-4 rounded-lg space-y-4">
+              <h1 className=""> Nikolais julequiz</h1>
+              <div className="flex justify-evenly">
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg
+                  className="h-8 w-8 text-red-500"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  {" "}
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+            </div>
 
-            <div className=" space-y-8 pb-36">
+            <div className=" space-y-8 pb-20">
               {questionList.map((question) => (
                 <QuizCard
                   key={question.id}
                   question={question}
                   onSelect={optionSelect}
+                  isQuizChecked={isQuizChecked}
                 />
               ))}
+            </div>
+            <div className="w-full flex justify-center items-center h-52  pb-32">
+              {isQuizChecked ? (
+                <button className="w-32 p-4 border-2 border-black rounded-lg bg-green-100">
+                  Score:{points}/{questionList.length}
+                </button>
+              ) : (
+                <button
+                  className="w-32 p-4 border-2 border-black rounded-lg bg-green-100 "
+                  onClick={checkAnswers}
+                >
+                  Se fasit
+                </button>
+              )}
             </div>
           </div>
         </div>

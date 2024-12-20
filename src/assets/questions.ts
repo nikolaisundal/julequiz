@@ -83,7 +83,7 @@ export const questions: Question[] = [
       "Borderline personlighetsforstyrrelse",
       "Epilepsi",
     ],
-    answerIndex: 1,
+    answerIndex: 0,
     playerChoiceIndex: undefined,
   },
   {
@@ -124,7 +124,7 @@ export const questions: Question[] = [
       "Jæskla god med pil og bue",
       "Jæskla god med øks",
     ],
-    answerIndex: 0,
+    answerIndex: 2,
     playerChoiceIndex: undefined,
   },
 ];
