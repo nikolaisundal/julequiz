@@ -28,6 +28,19 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
+    prompt:
+      "Hvor går spenningsgrensen for det som regnes som lavspenning i Norge?",
+    options: [
+      "Under 50V AC eller under 120V DC",
+      "Under 230V AC eller under 400V DC",
+      "Under 400V AC eller under 600V DC",
+      "Under 1000V AC eller under 1500V DC",
+    ],
+    answerIndex: 3,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
     prompt: "Hvilken av følgende er ikke en by i Syria?",
     options: ["Misurata", "Homs", "Ar Raqqah", "Aleppo"],
     answerIndex: 0,
@@ -48,14 +61,28 @@ export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
     prompt: "Hvilket land har IKKE en by ved navn Tripoli?",
-    options: ["Libya", "Tunisia", "Hellas", "Libanon"],
-    answerIndex: 1,
+    options: ["Libya", "Hellas", "Tunisia", "Libanon"],
+    answerIndex: 2,
     playerChoiceIndex: undefined,
   },
   {
     id: crypto.randomUUID(),
     prompt: "Hvilket av følgende er ikke et buldretak/grep(hold)?",
     options: ["Jug", "Crump", "Bucket", "Sloper"],
+    answerIndex: 1,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "hva betyr det svenske ordet örngott?",
+    options: ["Putevar", "Ørnemat", "Strikkegenser", "Lue"],
+    answerIndex: 0,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Hvor mange bøker er det i den originale Harry Potter-serien?",
+    options: ["6", "7", "8", "9"],
     answerIndex: 1,
     playerChoiceIndex: undefined,
   },
@@ -96,6 +123,13 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
+    prompt: "Hva er menneskekroppens største organ?",
+    options: ["Leveren", "Tarmene", "Huden", "Lungene"],
+    answerIndex: 2,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
 
     prompt:
       "På slutten av 900-tallet, muligens i år 986, bekjempet bla. ladejarlene en dansk invasjonsflåte. Hva heter slaget?",
@@ -126,6 +160,25 @@ export const questions: Question[] = [
       "Jæskla god med øks",
     ],
     answerIndex: 2,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Det er håp..",
+    options: [
+      "for alle",
+      "uansett kva som skjer",
+      "i hengande snøre",
+      "i alle hus",
+    ],
+    answerIndex: 2,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Hva er Norges nasjonalfugl?",
+    options: ["Fossekall", "Dompap", "Hakkespett", "Kongeørn"],
+    answerIndex: 0,
     playerChoiceIndex: undefined,
   },
 ];

@@ -58,19 +58,6 @@
   color: rgb(200, 241, 255);
 }
 
-/* .main {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#123, #111);
-  opacity: 0;
-  animation: main-loadup 1s forwards linear, main-loadup-bg 10s forwards linear;
-  animation-delay: 7s, 8s;
-} */
-
 .main {
   z-index: 1;
   position: absolute;
