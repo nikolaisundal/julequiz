@@ -9,6 +9,13 @@ type Question = {
 export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
+    prompt: "Hva heter den første James Bond-filmen?",
+    options: ["Thunderball", "Goldfinger", "Dr. No", "You Only Live Twice"],
+    answerIndex: 2,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
     prompt: "Hva er amaurosis fugax?",
     options: [
       "Man er født uten brunøye",
@@ -41,21 +48,36 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Hvilken av følgende er ikke en by i Syria?",
-    options: ["Misurata", "Homs", "Ar Raqqah", "Aleppo"],
+    prompt: "Hvilken av følgende er IKKE en by i Syria?",
+    options: ["Misurata", "Homs", "Damaskus", "Aleppo"],
     answerIndex: 0,
     playerChoiceIndex: undefined,
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Hva ble kåret til årets spill under The Game Awards 2024?",
+    prompt:
+      "Hvilken metamorf bergart dannes når kalkstein utsettes for høyt trykk og varme?",
+    options: ["Gneis", "Marmor", "Kvarts", "Skifer"],
+    answerIndex: 1,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Hvor starter man som level 1 undead i World of Warcraft?",
     options: [
-      "Black Myth: Wukong",
-      "Final Fantasy VII Rebirth",
-      "Balatro",
-      "Astro Bot",
+      "Mulgore",
+      "Scarlet Enclave",
+      "Eversong Woods",
+      "Tirisfal Glades",
     ],
     answerIndex: 3,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Hvilken stat i USA har størst areal?",
+    options: ["Montana", "Alaska", "California", "Texas"],
+    answerIndex: 1,
     playerChoiceIndex: undefined,
   },
   {
@@ -67,16 +89,29 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Hvilket av følgende er ikke et buldretak/grep(hold)?",
+    prompt: "Hvilket av følgende er IKKE et buldretak/grep(hold)?",
     options: ["Jug", "Crump", "Bucket", "Sloper"],
     answerIndex: 1,
     playerChoiceIndex: undefined,
   },
   {
     id: crypto.randomUUID(),
-    prompt: "hva betyr det svenske ordet örngott?",
+    prompt: "Hva betyr det svenske ordet örngott?",
     options: ["Putevar", "Ørnemat", "Strikkegenser", "Lue"],
     answerIndex: 0,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt:
+      "Ved energimerking av bygg, hvilken faktor påvirker normalt energikarakteren mest?",
+    options: [
+      "Belysning og elektriske installasjoner",
+      "Klimaskall (vegger, tak, vinduer, dører)",
+      "Ventilasjonsanlegg og luftbehandling",
+      "Oppvarmingssystem og varmekilde",
+    ],
+    answerIndex: 1,
     playerChoiceIndex: undefined,
   },
   {
@@ -92,6 +127,13 @@ export const questions: Question[] = [
       "Hvis man ser bort fra kostnader for personell, infrastruktur, investeringer og oppgraderinger. Hva er ca. timesprisen for å holde en F-35 i lufta?",
     options: ["110 000 kr", "250 000 kr", "360 000 kr", "420 000 kr"],
     answerIndex: 2,
+    playerChoiceIndex: undefined,
+  },
+  {
+    id: crypto.randomUUID(),
+    prompt: "Fra hvilket land kommer osten gorgonzola?",
+    options: ["Spania", "Frankrike", "Portugal", "Italia"],
+    answerIndex: 3,
     playerChoiceIndex: undefined,
   },
   {
@@ -117,8 +159,8 @@ export const questions: Question[] = [
     id: crypto.randomUUID(),
     prompt:
       "I hvilket år ble sangen 'Gangnam Style' utgitt av den koreanske artisten Psy?",
-    options: ["2010", "2011", "2012", "2013"],
-    answerIndex: 2,
+    options: ["2010", "2012", "2014", "2015"],
+    answerIndex: 1,
     playerChoiceIndex: undefined,
   },
   {

@@ -14,6 +14,7 @@ function App() {
   const [questionList, setQuestionList] = useState<Question[]>(questions);
   const [isQuizChecked, setIsQuizChecked] = useState(false);
   const [points, setPoints] = useState<number>(0);
+  const [showUnansweredWarning, setShowUnansweredWarning] = useState(false);
 
   const optionSelect = (index: number, id: string) => {
     setQuestionList((questions) =>
@@ -31,7 +32,10 @@ function App() {
     );
 
     if (!allQuestionsAnswered) {
-      alert("Please answer all questions before checking!");
+      setShowUnansweredWarning(true);
+      alert(
+        "Vennligst fyll inn alle svar. Kort uten svar er merket med rød bakgrunn!"
+      );
       return;
     }
     setIsQuizChecked(true);
@@ -42,7 +46,7 @@ function App() {
     }, 0);
     setPoints(score);
   };
-  console.log();
+  console.log(questionList.length);
   return (
     <>
       <div className="loader">
@@ -183,17 +187,18 @@ function App() {
                   question={question}
                   onSelect={optionSelect}
                   isQuizChecked={isQuizChecked}
+                  showUnansweredWarning={showUnansweredWarning}
                 />
               ))}
             </div>
             <div className="w-full flex justify-center items-center h-52  pb-32">
               {isQuizChecked ? (
-                <button className="w-32 p-4 border-2 border-black rounded-lg bg-green-100">
-                  Score:{points}/{questionList.length}
+                <button className="bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg  font-semibold">
+                  {`Score: ${points} / ${questionList.length}`}
                 </button>
               ) : (
                 <button
-                  className="w-32 p-4 border-2 border-black rounded-lg bg-green-100 "
+                  className="bg-gradient-to-r from-red-100 to-green-100 w-32 p-4 border-2 border-black rounded-lg  font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50"
                   onClick={checkAnswers}
                 >
                   Se fasit

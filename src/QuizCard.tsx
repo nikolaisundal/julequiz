@@ -9,6 +9,7 @@ type QuizCardProps = {
   question: Question;
   onSelect: (index: number, id: string) => void;
   isQuizChecked: boolean;
+  showUnansweredWarning: boolean;
 };
 
 const buttonStyles = [
@@ -34,37 +35,48 @@ const buttonStyles = [
   },
 ];
 
-function QuizCard({ question, isQuizChecked, onSelect }: QuizCardProps) {
+function QuizCard({
+  question,
+  isQuizChecked,
+  showUnansweredWarning,
+  onSelect,
+}: QuizCardProps) {
   const { prompt, options, playerChoiceIndex, id } = question;
   return (
-    <div className="bg-green-100 rounded-lg border-2 border-black p-2">
-      <div className="text-center p-2 font-semibold border-b-2 border-black mb-2">
+    <div
+      className={`rounded-lg border-2 border-black p-2 ${
+        showUnansweredWarning && playerChoiceIndex === undefined
+          ? "bg-red-100 ring-2 ring-red-500"
+          : "bg-green-100"
+      }`}
+    >
+      <div className="text-center p-2 font-semibold border-b-2 border-black pb-3 mb-2">
         <span>{prompt}</span>
       </div>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-4 py-2">
         {options.map((option, index) => (
           <button
             key={index}
             onClick={() => (!isQuizChecked ? onSelect(index, id) : undefined)}
-            className={`rounded-lg flex items-center w-full text-left border-black border 
+            className={`rounded-lg flex items-center w-full text-left border-black border h-12
   ${
     !isQuizChecked
       ? "hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50"
       : ""
   } ${playerChoiceIndex === index ? "ring-2 ring-black" : ""}`}
           >
-            <div className="flex items-center w-full text-left ">
+            <div className="flex items-center w-full text-left h-full">
               <span
                 className={`${
                   playerChoiceIndex === index
                     ? buttonStyles[index].selectedBg
                     : buttonStyles[index].bg
-                } font-bold w-8 text-center py-2 border-e border-black rounded-s-lg`}
+                } font-bold w-10 text-center border-e h-full border-black rounded-s-lg flex items-center justify-center`}
               >
                 {buttonStyles[index].letter}:
               </span>
               <span
-                className={`p-2 w-full rounded-e-lg ${
+                className={`px-2  h-full w-full rounded-e-lg flex items-center ${
                   !isQuizChecked
                     ? "text-black"
                     : // When checked, show green for correct answer, red for wrong choice
