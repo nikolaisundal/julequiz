@@ -10,7 +10,7 @@ export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
     prompt:
-      "Hva heter plassen hvor avfallsprodukter fra utsmelting av metallble dumpet på Røros?",
+      "Hva heter plassen hvor avfallsprodukter fra utsmelting av metall ble dumpet på Røros?",
     options: [
       "Slagghaugan",
       "Kobberhaugan",

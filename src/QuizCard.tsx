@@ -79,12 +79,11 @@ function QuizCard({
                 className={`px-2  h-full w-full rounded-e-lg flex items-center ${
                   !isQuizChecked
                     ? "text-black"
-                    : // When checked, show green for correct answer, red for wrong choice
-                    question.answerIndex === index
-                    ? "text-green-600"
-                    : playerChoiceIndex === index
-                    ? "text-red-600"
-                    : "text-black"
+                    : question.answerIndex === index
+                      ? "text-green-700"
+                      : playerChoiceIndex === index
+                        ? "text-red-600"
+                        : "text-black"
                 } ${playerChoiceIndex === index ? "bg-slate-200" : "bg-white"}`}
               >
                 {option}
