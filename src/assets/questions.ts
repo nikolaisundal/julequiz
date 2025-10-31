@@ -10,7 +10,7 @@ export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
     prompt:
-      "Hvor ble avfallsprodukter fra utsmelting av metall på Røros ble dumpet?",
+      "Hva heter plassen hvor avfallsprodukter fra utsmelting av metallble dumpet på Røros?",
     options: [
       "Slagghaugan",
       "Kobberhaugan",
@@ -29,7 +29,7 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Hva heter myntenenheten i Vietnam?",
+    prompt: "Hva heter myntenheten i Vietnam?",
     options: ["Dong", "Baht", "Ding", "Ringgit"],
     answerIndex: 0,
     playerChoiceIndex: undefined,
@@ -50,7 +50,7 @@ export const questions: Question[] = [
     id: crypto.randomUUID(),
     prompt: "Hvor ble store deler av Sound of Music spilt inn?",
     options: [
-      "Wien (Østerrike)",
+      "Bolzano (Italia)",
       "München (Tyskland)",
       "Zürich (Sveits)",
       "Salzburg (Østerrike)",
@@ -153,7 +153,7 @@ export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
     prompt: "Hvilket land er verdens største produsent av kaffebønner?",
-    options: ["Vietnam", "Indonesia", "Etiopia", "Brasil"],
+    options: ["India", "Indonesia", "Etiopia", "Brasil"],
     answerIndex: 3,
     playerChoiceIndex: undefined,
   },
