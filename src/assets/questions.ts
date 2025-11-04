@@ -61,7 +61,7 @@ export const questions: Question[] = [
   {
     id: crypto.randomUUID(),
     prompt: "Hvilket av disse er IKKE et belgisk ølmerke?",
-    options: ["Stella", "Jupiler", "Leffe", "Grolsch"],
+    options: ["Stella Artois", "Jupiler", "Leffe", "Grolsch"],
     answerIndex: 3,
     playerChoiceIndex: undefined,
   },
@@ -130,7 +130,8 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Cecilie Skog har hus på Kalymnos. Hvilket land tilhører øya?",
+    prompt:
+      "Cecilie Skog drar ofte til sin fritidsbolig på Kalymnos sammen med krølltoppkjekkasen Arne Sæter. Hvilket land tilhører øya?",
     options: ["Portugal", "Filippinene", "Indonesia ", "Hellas"],
     answerIndex: 3,
     playerChoiceIndex: undefined,
@@ -139,7 +140,7 @@ export const questions: Question[] = [
     id: crypto.randomUUID(),
     prompt:
       "Hva heter det runde/ovale hvetebrødet bakt med gjær, som brukes mye i det indiske kjøkken?",
-    options: ["Naan", "Injera", "Bæraki", "Indisk kakskiv"],
+    options: ["Naan", "Injera", "Barbari", "Indisk kakskiv"],
     answerIndex: 0,
     playerChoiceIndex: undefined,
   },
