@@ -76,17 +76,29 @@ function QuizCard({
                 {buttonStyles[index].letter}:
               </span>
               <span
-                className={`px-2  h-full w-full rounded-e-lg flex items-center ${
-                  !isQuizChecked
-                    ? "text-black"
-                    : question.answerIndex === index
-                      ? "text-green-700"
+                className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between ${
+                  playerChoiceIndex === index ? "bg-slate-200" : "bg-white"
+                } ${
+                  isQuizChecked
+                    ? question.answerIndex === index
+                      ? "text-green-700 font-semibold"
                       : playerChoiceIndex === index
-                        ? "text-red-600"
-                        : "text-black"
-                } ${playerChoiceIndex === index ? "bg-slate-200" : "bg-white"}`}
+                        ? "text-red-700"
+                        : ""
+                    : ""
+                }`}
               >
-                {option}
+                <span>{option}</span>
+                {isQuizChecked &&
+                  playerChoiceIndex === index &&
+                  question.answerIndex === index && (
+                    <span className="text-green-600 text-xl">✓</span>
+                  )}
+                {isQuizChecked &&
+                  playerChoiceIndex === index &&
+                  question.answerIndex !== index && (
+                    <span className="text-red-600 text-xl">✗</span>
+                  )}
               </span>
             </div>
           </button>

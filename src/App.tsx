@@ -25,12 +25,11 @@ function App() {
       )
     );
   };
+  const allQuestionsAnswered = questionList.every(
+    (question) => question.playerChoiceIndex !== undefined
+  );
 
   const checkAnswers = () => {
-    const allQuestionsAnswered = questionList.every(
-      (question) => question.playerChoiceIndex !== undefined
-    );
-
     if (!allQuestionsAnswered) {
       setShowUnansweredWarning(true);
       alert(
@@ -46,7 +45,7 @@ function App() {
     }, 0);
     setPoints(score);
   };
-  console.log(questionList.length);
+
   return (
     <>
       <div className="main">
@@ -187,14 +186,16 @@ function App() {
                 />
               ))}
             </div>
-            <div className="w-full flex justify-center items-center h-52  pb-32">
+            <div className="w-full flex justify-center items-center h-52 pb-32">
               {isQuizChecked ? (
-                <button className="bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg  font-semibold">
+                <button className="bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg font-semibold w-72 h-20 text-2xl">
                   {`Score: ${points} / ${questionList.length}`}
                 </button>
               ) : (
                 <button
-                  className="bg-gradient-to-r from-red-100 to-green-100 w-32 p-4 border-2 border-black rounded-lg  font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50"
+                  className={`bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50 w-72 h-20 text-2xl ${
+                    allQuestionsAnswered ? "animate-bounce" : ""
+                  }`}
                   onClick={checkAnswers}
                 >
                   Se fasit
