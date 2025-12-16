@@ -175,7 +175,7 @@ function App() {
               </div>
             </div>
 
-            <div className=" space-y-8 pb-20">
+            <div className=" space-y-8 pb-32">
               {questionList.map((question) => (
                 <QuizCard
                   key={question.id}
@@ -186,20 +186,27 @@ function App() {
                 />
               ))}
             </div>
-            <div className="w-full flex justify-center items-center h-52 pb-32">
+            <div className="w-full flex justify-center items-center h-52 pb-96">
               {isQuizChecked ? (
                 <button className="bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg font-semibold w-72 h-20 text-2xl">
                   {`Score: ${points} / ${questionList.length}`}
                 </button>
               ) : (
-                <button
-                  className={`bg-gradient-to-r from-red-100 to-green-100 p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50 w-72 h-20 text-2xl ${
-                    allQuestionsAnswered ? "animate-bounce" : ""
-                  }`}
-                  onClick={checkAnswers}
+                <div
+                  className={`${allQuestionsAnswered ? "animate-bounce" : ""}`}
                 >
-                  Se fasit
-                </button>
+                  <button
+                    className={`p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50 w-72 h-20 text-2xl relative overflow-hidden`}
+                    onClick={checkAnswers}
+                  >
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r from-red-200 to-green-200 rounded-lg ${
+                        allQuestionsAnswered ? "animate-pulse" : ""
+                      }`}
+                    />
+                    <span className="relative z-10">Se fasit</span>
+                  </button>
+                </div>
               )}
             </div>
           </div>

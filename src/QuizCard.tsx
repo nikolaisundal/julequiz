@@ -50,7 +50,7 @@ function QuizCard({
           : "bg-green-100"
       }`}
     >
-      <div className="text-center p-2 font-semibold border-b-2 border-black pb-3 mb-2">
+      <div className="text-center p-2 font-semibold border-b-2 border-black pb-3 mb-2 text-xl">
         <span>{prompt}</span>
       </div>
       <div className="flex flex-col space-y-4 py-2">
@@ -71,20 +71,20 @@ function QuizCard({
                   playerChoiceIndex === index
                     ? buttonStyles[index].selectedBg
                     : buttonStyles[index].bg
-                } font-bold w-10 text-center border-e h-full border-black rounded-s-lg flex items-center justify-center`}
+                } font-bold text-xl w-10 text-center border-e h-full border-black rounded-s-lg flex items-center justify-center`}
               >
                 {buttonStyles[index].letter}:
               </span>
               <span
-                className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between ${
-                  playerChoiceIndex === index ? "bg-slate-200" : "bg-white"
+                className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between text-lg ${
+                  playerChoiceIndex === index ? "bg-slate-200" : "bg-gray-50"
                 } ${
                   isQuizChecked
                     ? question.answerIndex === index
-                      ? "text-green-700 font-semibold"
+                      ? "text-green-600 font-semibold "
                       : playerChoiceIndex === index
-                        ? "text-red-700"
-                        : ""
+                        ? "text-red-600 font-semibold "
+                        : "text-slate-900"
                     : ""
                 }`}
               >
@@ -92,7 +92,7 @@ function QuizCard({
                 {isQuizChecked &&
                   playerChoiceIndex === index &&
                   question.answerIndex === index && (
-                    <span className="text-green-600 text-xl">✓</span>
+                    <span className="text-green-600 text-xl ">✓</span>
                   )}
                 {isQuizChecked &&
                   playerChoiceIndex === index &&
