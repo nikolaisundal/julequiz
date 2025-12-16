@@ -201,7 +201,7 @@ function App() {
                   >
                     <div
                       className={`absolute inset-0 bg-gradient-to-r from-red-200 to-green-200 rounded-lg ${
-                        allQuestionsAnswered ? "animate-pulse" : ""
+                        allQuestionsAnswered ? "animate-pulse " : ""
                       }`}
                     />
                     <span className="relative z-10">Se fasit</span>

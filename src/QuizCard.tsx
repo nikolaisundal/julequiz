@@ -71,7 +71,7 @@ function QuizCard({
                   playerChoiceIndex === index
                     ? buttonStyles[index].selectedBg
                     : buttonStyles[index].bg
-                } font-bold text-xl w-10 text-center border-e h-full border-black rounded-s-lg flex items-center justify-center`}
+                } font-bold text-xl w-10 text-center border-e h-full border-black rounded-s-[7px] flex items-center justify-center`}
               >
                 {buttonStyles[index].letter}:
               </span>
