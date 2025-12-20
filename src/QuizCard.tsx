@@ -26,7 +26,7 @@ const buttonStyles = [
   {
     letter: "C",
     bg: "bg-yellow-200",
-    selectedBg: "bg-yellow-400",
+    selectedBg: "bg-yellow-300",
   },
   {
     letter: "D",
