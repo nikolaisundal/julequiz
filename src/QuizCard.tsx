@@ -16,12 +16,12 @@ const buttonStyles = [
   {
     letter: "A",
     bg: "bg-red-200",
-    selectedBg: "bg-red-400",
+    selectedBg: "bg-[#f45a5a]",
   },
   {
     letter: "B",
-    bg: "bg-green-200",
-    selectedBg: "bg-green-400",
+    bg: "bg-green-300",
+    selectedBg: "bg-green-500",
   },
   {
     letter: "C",
@@ -73,7 +73,10 @@ function QuizCard({
                     : buttonStyles[index].bg
                 } font-bold text-xl w-10 text-center border-e h-full border-black rounded-s-[7px] flex items-center justify-center`}
               >
-                {buttonStyles[index].letter}:
+                {buttonStyles[index].letter}
+                <span className=" font-semibold relative -top-[1.5px] -right-[1.5px]">
+                  {":"}
+                </span>
               </span>
               <span
                 className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between text-lg ${
