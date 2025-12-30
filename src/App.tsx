@@ -50,7 +50,56 @@ function App() {
     <>
       <div className="main">
         <div className="initial-snow">
+          <div className="snow">🎆</div>
+          <div className="snow">🎁</div>
+          <div className="snow">🥂</div>
+          <div className="snow">🎇</div>
           <div className="snow">❄️</div>
+          <div className="snow">🍾</div>
+          <div className="snow">🎉</div>
+          <div className="snow">⛄</div>
+          <div className="snow">❄️</div>
+          <div className="snow">🎊</div>
+          <div className="snow">✨</div>
+          <div className="snow">🤶🏻</div>
+          <div className="snow">🕛</div>
+          <div className="snow">🎆</div>
+          <div className="snow">🤶🏽</div>
+          <div className="snow">🥳</div>
+          <div className="snow">🪩</div>
+          <div className="snow">🤶🏻</div>
+          <div className="snow">🎇</div>
+          <div className="snow">🌟</div>
+          <div className="snow">👼🏾</div>
+          <div className="snow">🥂</div>
+          <div className="snow">🎈</div>
+          <div className="snow">❄️</div>
+          <div className="snow">🎆</div>
+          <div className="snow">⭐</div>
+          <div className="snow">🎄</div>
+          <div className="snow">🍾</div>
+          <div className="snow">🎉</div>
+          <div className="snow">🎅🏻</div>
+          <div className="snow">☃️</div>
+          <div className="snow">✨</div>
+          <div className="snow">🎄</div>
+          <div className="snow">🎊</div>
+          <div className="snow">🎇</div>
+          <div className="snow">🤶🏿</div>
+          <div className="snow">🥳</div>
+          <div className="snow">🎆</div>
+          <div className="snow">👼🏾</div>
+          <div className="snow">🌟</div>
+          <div className="snow">🪩</div>
+          <div className="snow">🎅🏻</div>
+          <div className="snow">🥂</div>
+          <div className="snow">🎈</div>
+          <div className="snow">🧝</div>
+          <div className="snow">✨</div>
+          <div className="snow">🎉</div>
+          <div className="snow">🎅🏾</div>
+          <div className="snow">⭐</div>
+          {/* <div className="snow">❄️</div>
           <div className="snow">🎅🏽</div>
           <div className="snow">⛄</div>
           <div className="snow">🎁</div>
@@ -99,11 +148,11 @@ function App() {
           <div className="snow">☃️</div>
           <div className="snow">❄️</div>
           <div className="snow">🎅🏼</div>
-          <div className="snow">⭐</div>
+          <div className="snow">⭐</div> */}
         </div>
         <div className="w-full h-screen fixed flex justify-center overflow-y-auto">
-          <div className="w-full max-w-sm relative  pt-20">
-            <div className="text-center text-slate-100 mb-20 bg-red-300 text-4xl border-2 border-black p-4 rounded-lg space-y-4">
+          <div className="w-full max-w-sm relative  pt-14">
+            <div className="text-center text-slate-100 mb-36 bg-red-300 text-4xl border-2 border-black p-4 rounded-lg space-y-4">
               <h1 className=""> Nikolais julequiz</h1>
               <div className="flex justify-evenly">
                 <svg
@@ -175,7 +224,7 @@ function App() {
               </div>
             </div>
 
-            <div className=" space-y-8 pb-32">
+            <div className=" space-y-10 pb-32">
               {questionList.map((question) => (
                 <QuizCard
                   key={question.id}
@@ -192,19 +241,12 @@ function App() {
                   {`Score: ${points} / ${questionList.length}`}
                 </button>
               ) : (
-                <div
-                  className={`${allQuestionsAnswered ? "animate-bounce" : ""}`}
-                >
+                <div className={allQuestionsAnswered ? "animate-bounce saturate-150" : ""}>
                   <button
-                    className={`p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 delay-50 w-72 h-20 text-2xl relative overflow-hidden`}
+                    className="p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 w-72 h-20 text-2xl bg-gradient-to-r from-red-200 to-green-200"
                     onClick={checkAnswers}
                   >
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r from-red-200 to-green-200 rounded-lg ${
-                        allQuestionsAnswered ? "animate-pulse " : ""
-                      }`}
-                    />
-                    <span className="relative z-10">Se fasit</span>
+                    Se fasit
                   </button>
                 </div>
               )}
