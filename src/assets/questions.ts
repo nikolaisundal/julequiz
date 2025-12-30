@@ -71,7 +71,7 @@ export const questions: Question[] = [
   },
   {
     id: crypto.randomUUID(),
-    prompt: "Hvilken av disse bruker mest strøm i løpet av én times bruk?",
+    prompt: "Hvilken av disse trekker mest strøm i løpet av én times bruk?",
     options: ["Kjøleskap", "LED-TV", "Stekeovn", "Laptop"],
     answerIndex: 2,
     playerChoiceIndex: undefined,
