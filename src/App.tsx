@@ -21,19 +21,19 @@ function App() {
       questions.map((question) =>
         question.id === id
           ? { ...question, playerChoiceIndex: index }
-          : question
-      )
+          : question,
+      ),
     );
   };
   const allQuestionsAnswered = questionList.every(
-    (question) => question.playerChoiceIndex !== undefined
+    (question) => question.playerChoiceIndex !== undefined,
   );
 
   const checkAnswers = () => {
     if (!allQuestionsAnswered) {
       setShowUnansweredWarning(true);
       alert(
-        "Vennligst fyll inn alle svar. Kort uten svar er merket med rød bakgrunn!"
+        "Vennligst fyll inn alle svar. Kort uten svar er merket med rød bakgrunn!",
       );
       return;
     }
@@ -50,178 +50,92 @@ function App() {
     <>
       <div className="main">
         <div className="initial-snow">
-          <div className="snow">🎆</div>
-          <div className="snow">🎁</div>
-          <div className="snow">🥂</div>
-          <div className="snow">🎇</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🍾</div>
-          <div className="snow">🎉</div>
-          <div className="snow">⛄</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎊</div>
-          <div className="snow">✨</div>
-          <div className="snow">🤶🏻</div>
-          <div className="snow">🕛</div>
-          <div className="snow">🎆</div>
-          <div className="snow">🤶🏽</div>
-          <div className="snow">🥳</div>
-          <div className="snow">🪩</div>
-          <div className="snow">🤶🏻</div>
-          <div className="snow">🎇</div>
-          <div className="snow">🌟</div>
-          <div className="snow">👼🏾</div>
-          <div className="snow">🥂</div>
-          <div className="snow">🎈</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎆</div>
-          <div className="snow">⭐</div>
-          <div className="snow">🎄</div>
-          <div className="snow">🍾</div>
-          <div className="snow">🎉</div>
-          <div className="snow">🎅🏻</div>
-          <div className="snow">☃️</div>
-          <div className="snow">✨</div>
-          <div className="snow">🎄</div>
-          <div className="snow">🎊</div>
-          <div className="snow">🎇</div>
-          <div className="snow">🤶🏿</div>
-          <div className="snow">🥳</div>
-          <div className="snow">🎆</div>
-          <div className="snow">👼🏾</div>
-          <div className="snow">🌟</div>
-          <div className="snow">🪩</div>
-          <div className="snow">🎅🏻</div>
-          <div className="snow">🥂</div>
-          <div className="snow">🎈</div>
-          <div className="snow">🧝</div>
-          <div className="snow">✨</div>
-          <div className="snow">🎉</div>
-          <div className="snow">🎅🏾</div>
-          <div className="snow">⭐</div>
-          {/* <div className="snow">❄️</div>
-          <div className="snow">🎅🏽</div>
-          <div className="snow">⛄</div>
-          <div className="snow">🎁</div>
-          <div className="snow">🎅</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🔔</div>
-          <div className="snow">🌟</div>
-          <div className="snow">🤶🏻</div>
-          <div className="snow">⛄</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🧝</div>
-          <div className="snow">🤶🏾</div>
-          <div className="snow">🎄</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎁</div>
-          <div className="snow">👼🏽</div>
-          <div className="snow">🎄</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🛷</div>
-          <div className="snow">🎅🏻</div>
-          <div className="snow">🤶🏻</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎁</div>
-          <div className="snow">⭐</div>
-          <div className="snow">🔔</div>
-          <div className="snow">🤶🏽</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🧝‍♀️</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🦌</div>
-          <div className="snow">🎄</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🦌</div>
-          <div className="snow">🎅🏾</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🍬</div>
-          <div className="snow">🎅🏿</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎁</div>
-          <div className="snow">👼🏾</div>
-          <div className="snow">❄️</div>
-          <div className="snow">👼</div>
-          <div className="snow">🤶🏿</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎁</div>
-          <div className="snow">☃️</div>
-          <div className="snow">❄️</div>
-          <div className="snow">🎅🏼</div>
-          <div className="snow">⭐</div> */}
+          <div className="initial-snow">
+            <div className="snow">🐣</div>
+            <div className="snow">🥚</div>
+            <div className="snow">🐰</div>
+            <div className="snow">⛷️</div>
+            <div className="snow">🍬</div>
+            <div className="snow">🐥</div>
+            <div className="snow">☀️</div>
+            <div className="snow">🍫</div>
+            <div className="snow">❄️</div>
+            <div className="snow">🎿</div>
+            <div className="snow">🐇</div>
+            <div className="snow">🥚</div>
+            <div className="snow">🍭</div>
+            <div className="snow">🐰</div>
+            <div className="snow">⛷️</div>
+            <div className="snow">🐤</div>
+            <div className="snow">☀️</div>
+            <div className="snow">🍫</div>
+            <div className="snow">🥚</div>
+            <div className="snow">❄️</div>
+            <div className="snow">🐣</div>
+            <div className="snow">🎿</div>
+            <div className="snow">🌷</div>
+            <div className="snow">🍬</div>
+            <div className="snow">⛷️</div>
+
+            <div className="snow hidden md:block">🐣</div>
+            <div className="snow hidden md:block">🥚</div>
+            <div className="snow hidden md:block">🐰</div>
+            <div className="snow hidden md:block">🌷</div>
+            <div className="snow hidden md:block">⛷️</div>
+            <div className="snow hidden md:block">🍬</div>
+            <div className="snow hidden md:block">🐥</div>
+            <div className="snow hidden md:block">☀️</div>
+            <div className="snow hidden md:block">🍫</div>
+            <div className="snow hidden md:block">❄️</div>
+            <div className="snow hidden md:block">🎿</div>
+            <div className="snow hidden md:block">🐇</div>
+            <div className="snow hidden md:block">🥚</div>
+            <div className="snow hidden md:block">🍭</div>
+            <div className="snow hidden md:block">🐰</div>
+            <div className="snow hidden md:block">🐤</div>
+            <div className="snow hidden md:block">☀️</div>
+            <div className="snow hidden md:block">🍫</div>
+            <div className="snow hidden md:block">🥚</div>
+            <div className="snow hidden md:block">🐣</div>
+            <div className="snow hidden md:block">🎿</div>
+            <div className="snow hidden md:block">🍬</div>
+            <div className="snow hidden md:block">⛷️</div>
+            <div className="snow hidden md:block">🐇</div>
+            <div className="snow hidden md:block">🍭</div>
+
+            <div className="snow hidden xl:block">🐣</div>
+            <div className="snow hidden xl:block">🥚</div>
+            <div className="snow hidden xl:block">🐰</div>
+            <div className="snow hidden xl:block">🌷</div>
+            <div className="snow hidden xl:block">⛷️</div>
+            <div className="snow hidden xl:block">🍬</div>
+            <div className="snow hidden xl:block">🐥</div>
+            <div className="snow hidden xl:block">☀️</div>
+            <div className="snow hidden xl:block">🍫</div>
+            <div className="snow hidden xl:block">❄️</div>
+            <div className="snow hidden xl:block">🎿</div>
+            <div className="snow hidden xl:block">🐇</div>
+            <div className="snow hidden xl:block">🥚</div>
+            <div className="snow hidden xl:block">🍭</div>
+            <div className="snow hidden xl:block">🐰</div>
+            <div className="snow hidden xl:block">🐤</div>
+            <div className="snow hidden xl:block">☀️</div>
+            <div className="snow hidden xl:block">🍫</div>
+            <div className="snow hidden xl:block">🥚</div>
+            <div className="snow hidden xl:block">🐣</div>
+            <div className="snow hidden xl:block">🎿</div>
+            <div className="snow hidden xl:block">🍬</div>
+            <div className="snow hidden xl:block">⛷️</div>
+            <div className="snow hidden xl:block">🐇</div>
+            <div className="snow hidden xl:block">🍭</div>
+          </div>
         </div>
         <div className="w-full h-screen fixed flex justify-center overflow-y-auto">
-          <div className="w-full max-w-sm relative  pt-14">
-            <div className="text-center text-slate-100 mb-36 bg-red-300 text-4xl border-2 border-black p-4 rounded-lg space-y-4">
-              <h1 className=""> Nikolais julequiz</h1>
-              <div className="flex justify-evenly">
-                <svg
-                  className="h-8 w-8 text-red-400"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <svg
-                  className="h-8 w-8 text-red-400"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <svg
-                  className="h-8 w-8 text-red-500"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <svg
-                  className="h-8 w-8 text-red-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <svg
-                  className="h-8 w-8 text-red-700"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <svg
-                  className="h-8 w-8 text-red-700"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-              </div>
+          <div className="w-full max-w-sm relative  pt-32">
+            <div className="flex justify-center flex-col items-center text-slate-800 mb-36 border-2 border-black rounded-full h-96 bg-white">
+              <h1 className="text-4xl font-bold  w-fit ">Nikolais</h1>
+              <div className="bg-yellow-400 h-32 w-32 rounded-full my-6"></div>
+              <h1 className="text-4xl font-bold w-fit">påskequiz</h1>
             </div>
 
             <div className=" space-y-10 pb-32">
@@ -241,7 +155,11 @@ function App() {
                   {`Score: ${points} / ${questionList.length}`}
                 </button>
               ) : (
-                <div className={allQuestionsAnswered ? "animate-bounce saturate-150" : ""}>
+                <div
+                  className={
+                    allQuestionsAnswered ? "animate-bounce saturate-150" : ""
+                  }
+                >
                   <button
                     className="p-4 border-2 border-black rounded-lg font-semibold hover:drop-shadow-xl hover:-translate-y-0.5 duration-100 w-72 h-20 text-2xl bg-gradient-to-r from-red-200 to-green-200"
                     onClick={checkAnswers}

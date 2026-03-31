@@ -25,8 +25,8 @@ const buttonStyles = [
   },
   {
     letter: "C",
-    bg: "bg-yellow-200",
-    selectedBg: "bg-yellow-300",
+    bg: "bg-orange-200",
+    selectedBg: "bg-orange-400",
   },
   {
     letter: "D",
@@ -47,7 +47,7 @@ function QuizCard({
       className={`rounded-lg border-2 border-black p-2 ${
         showUnansweredWarning && playerChoiceIndex === undefined
           ? "bg-red-100 ring-2 ring-red-500"
-          : "bg-green-100"
+          : "bg-yellow-100"
       }`}
     >
       <div className="text-center p-2 font-semibold border-b-2 border-black pb-3 mb-2 text-xl">
@@ -79,7 +79,7 @@ function QuizCard({
                 </span>
               </span>
               <span
-                className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between text-lg ${
+                className={`px-2 h-full w-full rounded-e-lg flex items-center justify-between text-lg leading-tight ${
                   playerChoiceIndex === index ? "bg-slate-200" : "bg-gray-50"
                 } ${
                   isQuizChecked
