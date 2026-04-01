@@ -130,16 +130,43 @@ function App() {
         </div>
 
         <div className="w-full h-screen fixed flex justify-center overflow-y-auto">
-          <div className="w-full max-w-sm relative  pt-32">
-            <div className="relative flex justify-center items-center text-slate-800 mb-36 border-2 border-black rounded-full h-72 w-72 bg-white mx-auto">
-              <div className="bg-yellow-400 h-48 w-48 rounded-full"></div>
-              <h1 className="absolute text-4xl font-bold top-24">Nikolais</h1>
-              <h1 className="absolute text-4xl font-bold bottom-24">
-                påskequiz
-              </h1>
+          <div className="w-full max-w-sm relative md:pt-24">
+            <div className="h-screen md:h-auto flex flex-col justify-center items-center mb-36 gap-20">
+              <div className="relative flex justify-center items-center text-slate-800 border-2 border-black rounded-full h-72 w-72 bg-white mx-auto">
+                <div className="bg-yellow-300 h-52 w-52 rounded-full border"></div>
+                <h1 className="absolute text-4xl font-bold top-24">Nikolais</h1>
+                <h1 className="absolute text-4xl font-bold bottom-24">
+                  påskequiz
+                </h1>
+              </div>
+
+              <button
+                className="md:hidden text-slate-700 flex flex-col items-center gap-5"
+                onClick={() => {
+                  document
+                    .getElementById("quiz-start")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                <span className="text-2xl font-bold bg-yellow-100 border-2 border-black backdrop-blur-sm px-4 py-2 text-black rounded-full">
+                  Trykk for å starte
+                </span>
+
+                <svg
+                  className="h-8 w-8 animate-bounce text-black"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+              </button>
             </div>
 
-            <div className=" space-y-10 pb-32">
+            <div id="quiz-start" className="space-y-10 pb-32">
               {questionList.map((question) => (
                 <QuizCard
                   key={question.id}
