@@ -131,7 +131,7 @@ function App() {
 
         <div className="w-full h-screen fixed flex justify-center overflow-y-auto">
           <div className="w-full max-w-sm relative md:pt-24">
-            <div className="h-screen md:h-auto flex flex-col justify-center items-center mb-36 gap-20">
+            <div className="h-screen md:h-auto flex flex-col justify-center items-center mb-36 gap-28">
               <div className="relative flex justify-center items-center text-slate-800 border-2 border-black rounded-full h-72 w-72 bg-white mx-auto">
                 <div className="bg-yellow-300 h-52 w-52 rounded-full border"></div>
                 <h1 className="absolute text-4xl font-bold top-24">Nikolais</h1>
